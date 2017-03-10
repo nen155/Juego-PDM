@@ -6,6 +6,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -33,10 +35,13 @@ public class CanvasView extends View {
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setColor(Color.BLACK);
-        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeWidth(4f);
-
+        paint.setStrokeWidth(20f);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.ADD));
+    }
+    public void cambiaColor(int color){
+        paint.setColor(color);
     }
     @Override
     protected void onDraw(Canvas canvas){

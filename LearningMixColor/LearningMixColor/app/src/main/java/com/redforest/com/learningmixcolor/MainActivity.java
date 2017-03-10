@@ -20,6 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void clearCanvas(View v){
+        canvasView.clearCanvas();
+    }
 
+    public void cambiaAzul(View view) {
+        canvasView.cambiaColor(Color.BLUE);
+    }
+
+    public void cambiaAmarillo(View view) {
+        canvasView.cambiaColor(Color.YELLOW);
     }
 }
